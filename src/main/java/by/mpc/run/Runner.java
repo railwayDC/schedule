@@ -12,7 +12,7 @@ public class Runner {
 	public static void main(String[] args) throws IOException {
 
 		Map<String, Object> params = new HashMap<>();
-		params.put("input.date", "2016-09-07");
+		params.put("input.date", "2016-09-11");
 		params.put("input.time_start", "09:48");
 		params.put("input.time_end", "17:00");
 		params.put("input.station_start", "Минск");
