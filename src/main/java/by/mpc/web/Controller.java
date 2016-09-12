@@ -20,6 +20,7 @@ public class Controller extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		CommandFactory factory = new CommandFactory();
 		ICommand command = factory.defineCommand(request);
 		String page = command.execute(request);

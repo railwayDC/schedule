@@ -20,7 +20,7 @@
 
 		function onClick() {
 			$(".intermediate-stations").append("<tr><td><input class='input-search' name='s' required list='stations' placeholder='название станции' type='search'/></td>" +
-					"<td><input class='input-small' name='d' type='search' placeholder='время в минутах'/></td></tr>");
+					"<td><input class='input-small' name='d' type='search' value='30' placeholder='время в минутах'/></td></tr>");
 			return false;
 		}
 	};
