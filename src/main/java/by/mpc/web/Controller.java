@@ -20,14 +20,9 @@ public class Controller extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println(" ---------------------- step1 -------------------------- ");
 		CommandFactory factory = new CommandFactory();
-		System.out.println(" ---------------------- step2 -------------------------- ");
 		ICommand command = factory.defineCommand(request);
-		System.out.println(" ---------------------- step3 -------------------------- ");
-		System.out.println(command);
 		String page = command.execute(request);
-		System.out.println(" ---------------------- step4 -------------------------- ");
 		if (page != null) {
 			request.getRequestDispatcher(page).forward(request, response);
 		}

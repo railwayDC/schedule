@@ -54,8 +54,9 @@ public class SearchCommand implements ICommand {
 			e.printStackTrace();
 		}
 
-		request.setAttribute("routes", manager.schedule());
-
+		request.setAttribute("schedule", manager.schedule());
+		System.out.println(manager.schedule());
+		
 		return "WEB-INF/index.jsp";
 	}
 }

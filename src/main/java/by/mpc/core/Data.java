@@ -10,6 +10,8 @@ import java.util.Map;
  */
 public class Data {
 
+	
+	public static ConfigurationProject config = new ConfigurationProject();
 	// Карта данных Map<String, Object> для потока с определенным id 
 	private Map<Long, Map<String, Object>> params = new HashMap<Long, Map<String, Object>>();
 	// Делаем только один экземпляр

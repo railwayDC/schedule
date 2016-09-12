@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="routes" class="by.mpc.core.model.Schedule" scope="request"></jsp:useBean>
+<jsp:useBean id="schedule" class="by.mpc.core.model.Schedule" scope="request"></jsp:useBean>
 
 <div class="row-fluid">
 	<div class="span6">
@@ -11,14 +12,15 @@
 					<td>Arrival</td>
 				</tr>
 			</thead>
-			<c:forEach items="${routes.getList()}" var="item" begin="1" step="1" varStatus="counter">
+			
+			<c:forEach items="${schedule.getList()}" var="item" begin="1" step="1" varStatus="counter">
 				<tbody>
 					<tr class="info"><td>${counter.count}</td><td></td><td></td></tr>
 					<c:forEach items="${item.getList()}" var="it">
 						<tr>
 							<td>${it.getBStation().concat(" - ").concat(it.getEStation())}</td>
-							<td>${it.getBTimeString()}</td>
-							<td>${it.getETimeString()}</td>
+							<td>${it.getBTimeString(Route.DATE_TIME_FORMAT)}</td>
+							<td>${it.getETimeString(Route.DATE_TIME_FORMAT)}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

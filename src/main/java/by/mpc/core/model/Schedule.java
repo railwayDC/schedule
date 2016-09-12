@@ -1,6 +1,7 @@
 package by.mpc.core.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,6 +31,10 @@ public class Schedule implements Iterable<ListRoute> {
 
 	public void clearAll() {
 		schedule.clear();
+	}
+	
+	public List<ListRoute> getList() {
+		return Collections.unmodifiableList(schedule);
 	}
 	
 	@Override

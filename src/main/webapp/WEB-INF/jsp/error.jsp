@@ -1,4 +1,4 @@
-﻿<%@ page errorPage="true" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+﻿<%@ page errorPage="true" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" isELIgnored="false"%>
 <html>
 <head>
 	<title>Ошибка</title>

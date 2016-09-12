@@ -80,7 +80,6 @@ public class ManagerRailway extends Thread {
 			
 			ListRoute listRoute = getListRoute(parse);
 			CashManager.save(listRoute, date);
-			
 			SearchRailway searchRailway = new SearchRailway(listRoute, calendar, check, correct);
 			schedule = searchRailway.getSchedule();
 		} catch (ParseException e) {

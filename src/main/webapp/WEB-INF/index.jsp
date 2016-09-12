@@ -4,20 +4,9 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
- 
+
 	<title>Railway DC</title>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>	
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-  
-	<script type="text/javascript" src="js/jquery.index.js"></script>
-	
 	<script> 
 		$(document).ready(function() {
 			$(".accordion").hideShowPlugin();
@@ -28,8 +17,7 @@
 	
 </head>
 </body>
-	
-	<form action="/railway/" method="get" accept-charset="utf-8">
+	<form action="/schedule/" method="get" accept-charset="utf-8">
 				<h2 align="center">РАСПИСАНИЕ ДВИЖЕНИЯ &nbsp;</h2>
   		<input type="hidden" name="command" value="search"/>
   		<%-- СПИСОК СТАНЦИЙ --%>

@@ -2,6 +2,7 @@ package by.mpc.core.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -49,6 +50,10 @@ public class ListRoute implements Iterable<Route>, Serializable {
 		list.addAll(listRoute.list);
 	}
 
+	public List<Route> getList() {
+		return Collections.unmodifiableList(list);
+	}
+	
 	@Override
 	public Iterator<Route> iterator() {
 		return list.iterator();
