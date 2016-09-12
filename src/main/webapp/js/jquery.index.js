@@ -30,7 +30,7 @@
 		$(this).click(onClick);
 
 		function onClick() {
-			$(".intermediate-stations").find("tr:last-child").remove();
+			$(".intermediate-stations").find("tbody > tr:last-child").remove();
 			return false;
 		}
 	};
