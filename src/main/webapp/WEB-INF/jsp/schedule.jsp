@@ -19,8 +19,8 @@
 					<c:forEach items="${item.getList()}" var="it">
 						<tr>
 							<td>${it.getBStation().concat(" - ").concat(it.getEStation())}</td>
-							<td>${it.getBTimeString(Route.DATE_TIME_FORMAT)}</td>
-							<td>${it.getETimeString(Route.DATE_TIME_FORMAT)}</td>
+							<td>${it.getBTimeString("yyyy-MM-dd HH:mm")}</td>
+							<td>${it.getETimeString("yyyy-MM-dd HH:mm")}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

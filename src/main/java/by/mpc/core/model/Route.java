@@ -85,6 +85,7 @@ public class Route implements Serializable {
 		return get(eDateTime, pattern);
 	}
 	
+	
 	public String getBTimeString(String pattern) {
 		return get(bDateTime, pattern);
 	}

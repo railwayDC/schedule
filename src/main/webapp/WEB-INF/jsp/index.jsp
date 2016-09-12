@@ -3,7 +3,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.index.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
 
 	<title>Railway DC</title>
 
@@ -18,7 +24,6 @@
 </head>
 </body>
 	<form action="/schedule/" method="get" accept-charset="utf-8">
-				<h2 align="center">РАСПИСАНИЕ ДВИЖЕНИЯ &nbsp;</h2>
   		<input type="hidden" name="command" value="search"/>
   		<%-- СПИСОК СТАНЦИЙ --%>
   		<datalist id="stations">
@@ -92,7 +97,7 @@
 			
 		<dl class="accordion">
 		    <dt class='btn'><i class='icon-pencil'></i>Промежуточные станции</dt>
-	    	<dd>
+	    		<dd>
 	    		<p>
 	    			<div class="">
 		    			<input class="addField btn btn-primary" type="submit" value="Добавить"/>
@@ -124,7 +129,7 @@
   	</form> 								
 			
 			
-	<jsp:include page="/WEB-INF/jsp/routesView.jsp"></jsp:include>
+	<jsp:include page="schedule.jsp"></jsp:include>
 			
 </body>
 </html>
