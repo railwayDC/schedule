@@ -7,14 +7,14 @@
 		<table class="table table-condensed table-hover table-bordered">
 			<thead>
 				<tr>
-					<td>Route</td>
-					<td>Departure</td>
-					<td>Arrival</td>
+					<td>Маршрут</td>
+					<td>Отправление</td>
+					<td>Прибытие</td>
 				</tr>
 			</thead>
-			<c:forEach items="${schedule.getList()}" var="item" begin="1" step="1" varStatus="counter">
+			<c:forEach items="${schedule.getList()}" var="item" begin="0" step="1" varStatus="counter">
 				<tbody>
-					<tr class="info"><td>${counter.count}</td><td></td><td></td></tr>
+					<tr class="info"><td>#${counter.count}</td><td></td><td></td></tr>
 					<c:forEach items="${item.getList()}" var="it">
 						<tr>
 							<td>${it.getBStation().concat(" - ").concat(it.getEStation())}</td>

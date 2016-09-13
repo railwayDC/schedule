@@ -3,12 +3,13 @@ package by.mpc.core.parse.cash;
 import java.util.HashMap;
 import java.util.Map;
 
+import by.mpc.core.Data;
 import by.mpc.core.model.ListRoute;
 import by.mpc.core.model.Route;
 
 public class CashManager {
 	
-	private static final String FILEPATH = "src/main/resources/cash/%1$s";
+	private static final String FILEPATH = Data.config.getProperty("project.path") + "/WEB-INF/classes/cash/%1$s";
 	
 	public static ListRoute load(String date, String station) {
 		return Serializator.deserialization(String.format(FILEPATH, date), station);

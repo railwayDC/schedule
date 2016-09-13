@@ -19,7 +19,6 @@ public class SearchCommand implements ICommand {
 		if (bStation == null || eStation == null || date == null || bTime == null || eTime == null) {
 			return "/WEB-INF/jsp/error.jsp";
 		}
-
 		Map<String, Object> params = new HashMap<>();
 		params.put("input.date", date);
 		params.put("input.time_start", bTime);
@@ -53,9 +52,7 @@ public class SearchCommand implements ICommand {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
 		request.setAttribute("schedule", manager.schedule());
-		System.out.println(manager.schedule());
 		
 		return "WEB-INF/jsp/index.jsp";
 	}

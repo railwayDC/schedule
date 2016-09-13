@@ -14,12 +14,11 @@ public class Serializator {
 
 	public static boolean serialization(ListRoute listRoute, String filePath, String fileName) {
 		boolean flag = false;
-		String projectPath = Data.config.getProperty("project.path");
-		File file = new File(projectPath + filePath);
+		File file = new File(filePath);
 		if (!file.exists()) {
 			file.mkdir();
 		}
-		file = new File(projectPath + filePath + "/" + fileName);
+		file = new File(filePath + "/" + fileName);
 		try (ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream(file))) {
 			ostream.writeObject(listRoute);
 			flag = true;
@@ -31,10 +30,9 @@ public class Serializator {
 
 	public static ListRoute deserialization(String filePath, String fileName) {
 		ListRoute listRoute = null;
-		String projectPath = Data.config.getProperty("project.path");		
-		File file = new File(projectPath + filePath + "/" + fileName);
+		File file = new File(filePath + "/" + fileName);
 		if (file.exists()) {
-			try (ObjectInputStream istream = new ObjectInputStream(new FileInputStream(projectPath + filePath + "/" + fileName))) {
+			try (ObjectInputStream istream = new ObjectInputStream(new FileInputStream(filePath + "/" + fileName))) {
 				listRoute = (ListRoute) istream.readObject();
 			} catch (IOException e) {
 				System.err.println("Ошибка ввода/вывода при десериализации: " + e);

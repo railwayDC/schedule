@@ -4,7 +4,6 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>	
 	<script type="text/javascript" src="js/jquery.index.js"></script>
@@ -26,8 +25,13 @@
 	
 </head>
 </body>
-	<div class="container">
-		<h1 class="text-center">Расписание поездов</h1>
+	
+
+
+	<div class="container">	
+	
+	
+		<h2 class="page-header text-center">Расписание движения поездов</h2>
 		<form action="/schedule/" method="get" accept-charset="utf-8">
 	  		<input type="hidden" name="command" value="search"/>
 	  		<%-- СПИСОК СТАНЦИЙ --%>
@@ -60,6 +64,7 @@
 				<option label="Ратомка" value="Ратомка">
 				<option label="Крыжовка" value="Крыжовка">
 			</datalist>		
+			
 			<div class="row">
 				<div class="span4">
 					<label class="control-label" for="bStation">Откуда </label>
@@ -73,7 +78,7 @@
 			    		<input class="input-xlarge" type="search" name="eStation" list="stations" required value="${param.eStation}" placeholder="название станции" /> 		
 			    	</div>
 				</div>
-				<div class="span4">
+				<div class="span3">
 					<label class="control-label" for="date_btn">Когда</label>
 					<div class="controls">
 						<div class="input-append">
@@ -113,8 +118,8 @@
 					    		<table class="intermediate-stations table table-striped table-bordered table-hover table-condensed">					    			
 					    			<thead>
 					    				<tr>
-						    				<td>Station</td>
-						    				<td>Time</td>
+						    				<td>Станция</td>
+						    				<td>Время</td>
 						    			</tr>
 					    			</thead>
 					    			<tbody>
@@ -132,6 +137,7 @@
 			</dl>
 	  	</form> 								
 	</div>		
+			
 			
 	<jsp:include page="schedule.jsp"></jsp:include>
 			
