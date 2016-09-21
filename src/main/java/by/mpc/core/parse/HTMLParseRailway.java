@@ -23,6 +23,8 @@ public class HTMLParseRailway implements IParseRailway {
 	private final String TAG_END_TIME = "b.train_end-time";
 	private final String TAG_START_PLACE = "a.train_start-place";
 	private final String TAG_END_PLACE = "a.train_end-place";
+	private final String TAG_NUMBER_TRAIN = "small.train_id";
+	private final String TAG_TYPE_TRAIN = "div.train_inner > i.b-pic.train_type";
 	// Максимальное время соединения
 	private static final int TIMEOUT = 40000;
 
@@ -43,6 +45,8 @@ public class HTMLParseRailway implements IParseRailway {
 			Elements eTimeElements = doc.select(TAG_END_TIME);
 			Elements bPlaceElements = doc.select(TAG_START_PLACE);
 			Elements ePlaceElements = doc.select(TAG_END_PLACE);
+			Elements numberTrain = doc.select(TAG_NUMBER_TRAIN);
+			Elements typeTrain = doc.select(TAG_TYPE_TRAIN);
 			// Выделяем информацию из элементов
 			Properties properties = new Properties();
 			properties.setProperty("input.station_start", bStation);
@@ -56,6 +60,10 @@ public class HTMLParseRailway implements IParseRailway {
 				properties.setProperty("input.time_end", eDateTime);
 				properties.setProperty("station_start", bPlaceElements.get(i).text());
 				properties.setProperty("station_end", ePlaceElements.get(i).text());				
+				properties.setProperty("input.number_train", numberTrain.get(i).text());
+				String type_attr = typeTrain.get(i).attr("class");
+				String type = type_attr.substring(type_attr.lastIndexOf(' '), type_attr.length());
+				properties.setProperty("input.type_train", type);				
 				
 				routes.add(new Route(properties));
 			}

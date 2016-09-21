@@ -1,18 +1,13 @@
 (function($) {
 	$.fn.hideShowPlugin = function() {
 		var dts = $(this).children('dt');
+		dts.next().hide();
 		dts.click(onClick);
-		dts.each(reset);
-		$(this).children('dd:last-child').show();
 		
 		function onClick() {
 			$(this).next().slideToggle('fast');
 			return false;
 		}
-		
-		function reset() {
-			$(this).next().hide();
-		}		
 	};
 	
 	$.fn.addFieldPlugin = function() {

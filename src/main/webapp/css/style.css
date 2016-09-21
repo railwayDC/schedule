@@ -2,3 +2,18 @@ input[type="date"] {
 	height: 30px;
 	width: 150px;
 }
+
+.train_type {
+	display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/sprt.png) 16px 16px;
+}
+
+.train_type.regional_economy{ background-position: -1px -76px; }
+.train_type.city{ background-position: -35px -76px; }
+.train_type.regional_business{ background-position: -52px -76px; }
+.train_type.interregional_economy{ background-position: -69px -76px; }
+.train_type.commercial { background-position: -142px -76px; }
+.train_type.international { background-position: -18px -76px; }
+.train_type.airport { background-position: 0 -184px; }

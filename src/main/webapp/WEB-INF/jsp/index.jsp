@@ -7,11 +7,11 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>	
 	<script type="text/javascript" src="js/jquery.index.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
 
 	<title>Railway DC</title>
 
@@ -25,12 +25,8 @@
 	
 </head>
 </body>
-	
-
 
 	<div class="container">	
-	
-	
 		<h2 class="page-header text-center">Расписание движения поездов</h2>
 		<form action="/schedule/" method="get" accept-charset="utf-8">
 	  		<input type="hidden" name="command" value="search"/>
@@ -64,7 +60,6 @@
 				<option label="Ратомка" value="Ратомка">
 				<option label="Крыжовка" value="Крыжовка">
 			</datalist>		
-			
 			<div class="row">
 				<div class="span4">
 					<label class="control-label" for="bStation">Откуда </label>
@@ -114,7 +109,8 @@
 						</div>
 						<br>
 						<div class="row-fluid">
-							<div class="span6 offset3">
+							<div class="span6 offset3">						
+									
 					    		<table class="intermediate-stations table table-striped table-bordered table-hover table-condensed">					    			
 					    			<thead>
 					    				<tr>

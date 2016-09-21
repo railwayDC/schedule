@@ -22,13 +22,16 @@ public class Route implements Serializable {
 	public static final String DATE_FORMAT = "yyyy-MM-dd";
 	public static final String TIME_FORMAT = "HH:mm";
 	
-	private final String bStation;
-	private final String eStation;
-	private final String bEnterStation;
-	private final String eEnterStation;
+	protected final String bStation;
+	protected final String eStation;
+	protected final String bEnterStation;
+	protected final String eEnterStation;
 	
-	private final Calendar bDateTime;
-	private final Calendar eDateTime;
+	protected final Calendar bDateTime;
+	protected final Calendar eDateTime;
+	
+	protected final String numberTrain;
+	protected final String typeTrain;
 
 	public Route(Properties properties) throws ParseException {
 		/**
@@ -43,12 +46,29 @@ public class Route implements Serializable {
 		// Время и дата
 		String bDateTime = properties.getProperty("input.time_start");
 		String eDateTime = properties.getProperty("input.time_end");
+		// Номер и тип поезда
+		this.numberTrain = properties.getProperty("input.number_train");
+		this.typeTrain = properties.getProperty("input.type_train");
 		// Преобразование времени и даты в тип Calendar
 		SimpleDateFormat format = new SimpleDateFormat(DATE_TIME_FORMAT);
 		this.bDateTime = GregorianCalendar.getInstance();
 		this.bDateTime.setTime(format.parse(bDateTime));
 		this.eDateTime = GregorianCalendar.getInstance();
 		this.eDateTime.setTime(format.parse(eDateTime));
+	}
+	
+	public Route(Route route) {
+		this.bEnterStation = route.bEnterStation;
+		this.eEnterStation = route.eEnterStation;
+		// Название станций после парсинга
+		this.bStation = route.bStation;
+		this.eStation = route.eStation;
+		// Номер и тип поезда
+		this.numberTrain = route.numberTrain;
+		this.typeTrain = route.typeTrain;
+		// Преобразование времени и даты в тип Calendar
+		this.bDateTime = route.bDateTime;
+		this.eDateTime = route.eDateTime;
 	}
 
 	public String getBStation() {
@@ -57,6 +77,14 @@ public class Route implements Serializable {
 
 	public String getEStation() {
 		return eStation;
+	}
+	
+	public String getNumberTrain() {
+		return numberTrain;
+	}
+
+	public String getTypeTrain() {
+		return typeTrain;
 	}
 
 	public String getBEnterStation() {

@@ -3,7 +3,7 @@
 <head>
 	<title>Ошибка</title>
 	<style>
-		<%@ include file='../css/error.css'%>	
+		<%@ include file='../../css/error.css'%>	
 	</style>
 </head>
 <body>

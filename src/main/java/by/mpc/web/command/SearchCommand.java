@@ -8,6 +8,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import by.mpc.core.ManagerRailway;
+import by.mpc.web.tools.sort.ScheduleSort;
+import by.mpc.web.tools.sort.TypeSortEnum;
+import by.mpc.web.view.model.ScheduleView;
 
 public class SearchCommand implements ICommand {
 	@Override
@@ -52,7 +55,10 @@ public class SearchCommand implements ICommand {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("schedule", manager.schedule());
+		ScheduleView scheduleView = new ScheduleView(manager.schedule());
+		ScheduleSort.sort(scheduleView, TypeSortEnum.TOTAL_TIME);
+		ScheduleSort.sort(scheduleView, TypeSortEnum.DEPARTURE_TIME);
+		request.setAttribute("schedule", scheduleView);
 		
 		return "WEB-INF/jsp/index.jsp";
 	}

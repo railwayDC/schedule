@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import by.mpc.core.Data;
 import by.mpc.core.model.ListRoute;
 
 public class Serializator {

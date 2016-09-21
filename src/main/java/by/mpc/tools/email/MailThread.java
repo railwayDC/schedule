@@ -10,8 +10,6 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import mail.creator.SessionCreator;
-
 public class MailThread extends Thread {
 
 	private MimeMessage message;
